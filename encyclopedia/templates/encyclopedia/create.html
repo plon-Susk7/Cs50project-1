@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block body %}
+ <h1> {{error}} </h1>
+ <h1> Create a New page </h1>
+ <form action={% url 'create'%} method="post" >
+  {% csrf_token %}
+  <textarea name="filename" rows="2" cols="100" style="margin-top: 0px; margin-bottom: 0px; height: 45px;" ></textarea>
+  <textarea name="contents" rows="10" cols="100" style="margin-top: 0px; margin-bottom: 0px; height: 330px;" ></textarea>
+  <input type="submit"></input>
+ </form>
+{% endblock %}
